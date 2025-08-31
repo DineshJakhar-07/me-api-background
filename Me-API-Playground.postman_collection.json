@@ -1,0 +1,258 @@
+{
+  "info": {
+    "name": "Me-API Playground",
+    "description": "API collection for the Me-API Playground project. A full-stack developer portfolio and API playground built with Next.js, MongoDB Atlas, and Tailwind CSS.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        },
+        "description": "Check if the API is running and healthy"
+      },
+      "response": []
+    },
+    {
+      "name": "Profile",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "profile"]
+            },
+            "description": "Retrieve the current profile data"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dinesh Kumar\",\n  \"email\": \"dinesh.kumar@example.com\",\n  \"bio\": \"Passionate Full-Stack Developer with expertise in modern web technologies. I love building scalable applications and solving complex problems through code.\",\n  \"avatar\": \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face\",\n  \"education\": [\n    {\n      \"institution\": \"Indian Institute of Technology\",\n      \"degree\": \"Bachelor of Technology\",\n      \"field\": \"Computer Science and Engineering\",\n      \"duration\": \"2020 - 2024\",\n      \"gpa\": \"8.5/10\"\n    }\n  ],\n  \"skills\": [\n    \"JavaScript\", \"TypeScript\", \"React\", \"Next.js\", \"Node.js\", \n    \"Python\", \"MongoDB\", \"PostgreSQL\", \"AWS\", \"Docker\",\n    \"Git\", \"REST APIs\", \"GraphQL\", \"Tailwind CSS\", \"Redux\"\n  ],\n  \"projects\": [\n    {\n      \"title\": \"E-Commerce Platform\",\n      \"description\": \"A full-stack e-commerce platform built with Next.js, MongoDB, and Stripe integration.\",\n      \"links\": [\"https://github.com/dinesh/ecommerce\", \"https://ecommerce-demo.vercel.app\"],\n      \"skills\": [\"Next.js\", \"MongoDB\", \"Stripe\", \"Tailwind CSS\", \"JWT\"],\n      \"image\": \"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop\"\n    }\n  ],\n  \"work\": [\n    {\n      \"company\": \"TechCorp Solutions\",\n      \"position\": \"Full-Stack Developer\",\n      \"duration\": \"June 2023 - Present\",\n      \"description\": \"Developed and maintained multiple web applications using React, Node.js, and MongoDB.\",\n      \"skills\": [\"React\", \"Node.js\", \"MongoDB\", \"AWS\", \"Docker\", \"Git\"]\n    }\n  ],\n  \"links\": {\n    \"github\": \"https://github.com/dinesh\",\n    \"linkedin\": \"https://linkedin.com/in/dinesh-kumar\",\n    \"portfolio\": \"https://dinesh-portfolio.vercel.app\",\n    \"resume\": \"https://drive.google.com/file/d/1234567890/view\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "profile"]
+            },
+            "description": "Create a new profile"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bio\": \"Updated bio with new information\",\n  \"skills\": [\"JavaScript\", \"TypeScript\", \"React\", \"Next.js\", \"Node.js\", \"Python\", \"MongoDB\", \"AWS\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "profile"]
+            },
+            "description": "Update the existing profile"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Get All Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/projects",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "projects"]
+            },
+            "description": "Get all projects from the profile"
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Projects by Skill",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/projects?skill=React",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "projects"],
+              "query": [
+                {
+                  "key": "skill",
+                  "value": "React"
+                }
+              ]
+            },
+            "description": "Filter projects by a specific skill"
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Projects by Python",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/projects?skill=Python",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "projects"],
+              "query": [
+                {
+                  "key": "skill",
+                  "value": "Python"
+                }
+              ]
+            },
+            "description": "Filter projects by Python skill"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "item": [
+        {
+          "name": "Get Top Skills",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/skills/top",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "skills", "top"]
+            },
+            "description": "Get the top skills based on frequency across profile, projects, and work experience"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "item": [
+        {
+          "name": "Search for React",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=React",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "React"
+                }
+              ]
+            },
+            "description": "Search for React across all profile data"
+          },
+          "response": []
+        },
+        {
+          "name": "Search for E-commerce",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=e-commerce",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "e-commerce"
+                }
+              ]
+            },
+            "description": "Search for e-commerce related content"
+          },
+          "response": []
+        },
+        {
+          "name": "Search for TechCorp",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=TechCorp",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "TechCorp"
+                }
+              ]
+            },
+            "description": "Search for TechCorp company in work experience"
+          },
+          "response": []
+        },
+        {
+          "name": "Search for MongoDB",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=MongoDB",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "MongoDB"
+                }
+              ]
+            },
+            "description": "Search for MongoDB across all data"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
